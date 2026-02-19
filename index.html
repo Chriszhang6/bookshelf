@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的书柜 | 经典文学收藏</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 吉卜力风格装饰元素 -->
+    <div class="cloud cloud-1">☁️</div>
+    <div class="cloud cloud-2">☁️</div>
+    <div class="cloud cloud-3">☁️</div>
+    <div class="seagull seagull-1">🐦</div>
+    <div class="seagull seagull-2">🐦</div>
+    <div class="seagull seagull-3">🐦</div>
+
+    <!-- 魔法粒子效果 -->
+    <div class="sparkle sparkle-1">✨</div>
+    <div class="sparkle sparkle-2">✨</div>
+    <div class="sparkle sparkle-3">✨</div>
+    <div class="sparkle sparkle-4">✨</div>
+    <div class="sparkle sparkle-5">✨</div>
+
+    <!-- 页面标题 -->
+    <header class="page-header">
+        <div class="header-content">
+            <h1 class="site-title">🏖️ 海滨书屋</h1>
+            <p class="site-subtitle">面朝大海，微风拂面 · 阅读的避风港</p>
+            <div class="header-stats">
+                <span class="stat-item">
+                    <span class="stat-number" id="totalBooks">12</span>
+                    <span class="stat-label">本书</span>
+                </span>
+                <span class="stat-divider">|</span>
+                <span class="stat-item">
+                    <span class="stat-number" id="totalAuthors">7</span>
+                    <span class="stat-label">位作者</span>
+                </span>
+                <span class="stat-divider">|</span>
+                <span class="stat-item">
+                    <span class="stat-number" id="totalGenres">10</span>
+                    <span class="stat-label">种类型</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+        <div class="room">
+            <div class="bookshelf-wrapper">
+                <!-- 书架顶部的装饰 -->
+                <div class="bookshelf-top">
+                    <div class="plant-left">🌸</div>
+                    <div class="bookshelf-title">📚 海滨书屋</div>
+                    <div class="plant-right">🌿</div>
+                </div>
+                
+                <div class="bookshelf">
+                    <!-- 书架层 1 -->
+                    <div class="shelf" data-shelf="1">
+                        <div class="shelf-shadow"></div>
+                        <div class="shelf-board"></div>
+                        <div class="books-container"></div>
+                    </div>
+                    <!-- 书架层 2 -->
+                    <div class="shelf" data-shelf="2">
+                        <div class="shelf-shadow"></div>
+                        <div class="shelf-board"></div>
+                        <div class="books-container"></div>
+                    </div>
+                    <!-- 书架层 3 -->
+                    <div class="shelf" data-shelf="3">
+                        <div class="shelf-shadow"></div>
+                        <div class="shelf-board"></div>
+                        <div class="books-container"></div>
+                    </div>
+                    <!-- 书架层 4 -->
+                    <div class="shelf" data-shelf="4">
+                        <div class="shelf-shadow"></div>
+                        <div class="shelf-board"></div>
+                        <div class="books-container"></div>
+                    </div>
+                </div>
+
+                <!-- 书架底部装饰 -->
+                <div class="bookshelf-bottom">
+                    <div class="decoration-items">
+                        <span class="decor-item" title="海螺">🐚</span>
+                        <span class="decor-item" title="贝壳">🪣</span>
+                        <span class="decor-item" title="沙堡">🏰</span>
+                        <span class="decor-item" title="海星">⭐</span>
+                        <span class="decor-item" title="帆船">⛵</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 书籍详情模态框 -->
+    <div class="book-modal" id="bookModal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="book-container">
+            <!-- 书籍信息卡片 -->
+            <div class="book-detail-card" id="bookDetailCard">
+                <button class="close-btn" id="closeBtn" aria-label="关闭">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" stroke="currentColor" stroke-width="2" d="M6 6l12 12M6 18L18 6"/>
+                    </svg>
+                </button>
+                
+                <div class="book-detail-content">
+                    <!-- 左侧：封面图片 -->
+                    <div class="book-detail-cover">
+                        <div class="cover-image" id="bookCover">
+                            <span class="cover-icon" id="coverIcon">📖</span>
+                        </div>
+                        <div class="cover-shadow"></div>
+                    </div>
+                    
+                    <!-- 右侧：书籍信息 -->
+                    <div class="book-detail-info">
+                        <div class="book-header">
+                            <span class="book-genre-badge" id="bookGenre">类型</span>
+                            <span class="book-year" id="bookYear">年份</span>
+                        </div>
+                        
+                        <h2 class="book-title" id="bookTitle">书名</h2>
+                        <p class="book-author" id="bookAuthor">作者</p>
+                        
+                        <div class="book-divider"></div>
+                        
+                        <div class="book-description-container">
+                            <h3>内容简介</h3>
+                            <p class="book-description" id="bookDescription">
+                                书籍描述内容...
+                            </p>
+                        </div>
+                        
+                        <div class="book-actions">
+                            <button class="action-btn favorite-btn" id="favoriteBtn">
+                                <span class="btn-icon">♥</span>
+                                <span class="btn-text">收藏</span>
+                            </button>
+                            <button class="action-btn share-btn" id="shareBookBtn">
+                                <span class="btn-icon">↗</span>
+                                <span class="btn-text">分享</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 分享提示 -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">已复制到剪贴板</span>
+    </div>
+
+    <script src="books/data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

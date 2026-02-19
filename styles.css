@@ -1,0 +1,1302 @@
+/* ==================== CSS 变量 ==================== */
+:root {
+    /* 吉卜力风格调色板 - 温暖柔和 */
+    --bg-cream: #FAF8F5;
+    --bg-warm: #FFF5EB;
+    --bg-sand: #FFE8D6;
+
+    /* 木质色调 - 更温暖自然 */
+    --wood-dark: #3D3229;
+    --wood-primary: #5C4A3A;
+    --wood-medium: #7D6652;
+    --wood-light: #A68B6C;
+    --wood-cream: #D4C4B0;
+
+    /* 玻璃拟态色调 - 更柔和 */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-shadow: rgba(0, 0, 0, 0.05);
+
+    /* 书籍颜色 - 温暖的莫兰迪色系 */
+    --book-1: #C9A86C;
+    --book-2: #7BA3B8;
+    --book-3: #9BA88A;
+    --book-4: #D4B8A8;
+    --book-5: #B89AA8;
+    --book-6: #D4C49E;
+    --book-7: #C4A88C;
+    --book-8: #98A8B8;
+    --book-9: #B8C49A;
+    --book-10: #C4A898;
+    --book-11: #A898B8;
+    --book-12: #C4B89A;
+
+    /* 文字颜色 */
+    --text-primary: #2C2416;
+    --text-secondary: #5C4A3A;
+    --text-muted: #8B7355;
+
+    /* 强调色 - 吉卜力风格 */
+    --accent-gold: #E8C9A0;
+    --accent-rose: #E8B8C8;
+    --accent-sage: #B8D4C4;
+
+    /* 动画时长 */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.4s;
+    --transition-slow: 0.6s;
+
+    /* 圆角 */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 20px;
+
+    /* 阴影 */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== 全局样式重置 ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Serif SC', 'Playfair Display', Georgia, serif;
+    /* 吉卜力风格海滩背景 */
+    background:
+        /* 柔和的天空渐变 */
+        linear-gradient(180deg,
+            rgba(135, 206, 235, 0.3) 0%,
+            rgba(176, 224, 230, 0.3) 20%,
+            rgba(224, 244, 255, 0.2) 40%,
+            rgba(255, 248, 231, 0.1) 60%,
+            transparent 100%
+        ),
+        /* 海滩背景图 */
+        url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80') center top / cover no-repeat;
+    min-height: 100vh;
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    background-attachment: fixed;
+}
+
+/* 吉卜力风格的柔光效果 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        /* 柔和的光晕效果 */
+        radial-gradient(ellipse at 30% 20%, rgba(255, 250, 240, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(135, 206, 250, 0.2) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+    animation: gentleGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes gentleGlow {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* ==================== 页面头部 ==================== */
+.page-header {
+    padding: 40px 20px 20px;
+    text-align: center;
+    background: linear-gradient(180deg,
+        rgba(255,250,240,0.7) 0%,
+        rgba(255,245,230,0.5) 50%,
+        rgba(255,240,220,0.3) 100%);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    position: relative;
+    z-index: 10;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--wood-dark);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(255, 245, 230, 0.5);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.site-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 20px;
+    animation: fadeInDown 0.8s ease-out 0.1s both;
+    text-shadow: 0 1px 4px rgba(255, 245, 230, 0.3);
+}
+
+.header-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-fast);
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.stat-number {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--wood-primary);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.stat-divider {
+    color: var(--wood-cream);
+    font-weight: 300;
+}
+
+/* ==================== 主内容区 ==================== */
+.main-content {
+    padding: 30px 20px 60px;
+    min-height: calc(100vh - 200px);
+    position: relative;
+    z-index: 2;
+}
+
+.room {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bookshelf-wrapper {
+    width: 100%;
+    max-width: 900px;
+    animation: fadeIn 1s ease-out 0.3s both;
+    background: rgba(255, 250, 240, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ==================== 书架顶部装饰 ==================== */
+.bookshelf-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 30px 10px;
+    margin-bottom: -10px;
+    position: relative;
+    z-index: 2;
+}
+
+.plant-left, .plant-right {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    animation: gentleSway 3s ease-in-out infinite;
+}
+
+.plant-right {
+    animation-delay: 1.5s;
+}
+
+.bookshelf-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--wood-light);
+    padding: 8px 20px;
+    background: var(--glass-bg);
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ==================== 书架主体 ==================== */
+.bookshelf {
+    background: linear-gradient(180deg,
+        var(--wood-primary) 0%,
+        var(--wood-medium) 30%,
+        var(--wood-light) 50%,
+        var(--wood-medium) 70%,
+        var(--wood-primary) 100%);
+    border-radius: var(--radius-lg);
+    padding: 25px 20px 15px;
+    box-shadow: 
+        var(--shadow-xl),
+        inset 0 2px 4px rgba(255,255,255,0.15),
+        inset 0 -2px 4px rgba(0,0,0,0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* 木质纹理效果 */
+.bookshelf::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 60px,
+            rgba(0,0,0,0.04) 60px,
+            rgba(0,0,0,0.04) 61px
+        );
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+}
+
+/* 内边框装饰 */
+.bookshelf::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 2px solid rgba(212, 165, 116, 0.3);
+    border-radius: var(--radius-md);
+    pointer-events: none;
+}
+
+/* ==================== 书架层 ==================== */
+.shelf {
+    position: relative;
+    flex: 1;
+    padding: 0 25px;
+    min-height: 110px;
+}
+
+.shelf-board {
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    right: 25px;
+    height: 14px;
+    background: linear-gradient(180deg,
+        var(--wood-cream) 0%,
+        var(--wood-light) 40%,
+        var(--wood-medium) 100%);
+    border-radius: 0 0 3px 3px;
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.25),
+        inset 0 1px 2px rgba(255,255,255,0.4);
+    z-index: 2;
+}
+
+/* 书架光泽效果 */
+.shelf-board::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 5%,
+        rgba(255,255,255,0.5) 50%,
+        transparent 95%);
+}
+
+/* 书架阴影 */
+.shelf-shadow {
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    right: 30px;
+    height: 20px;
+    background: linear-gradient(180deg,
+        rgba(0,0,0,0.15),
+        transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 书籍容器 */
+.books-container {
+    position: absolute;
+    bottom: 14px;
+    left: 25px;
+    right: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 2px;
+    padding: 0 5px 4px;
+    height: 96px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    z-index: 3;
+}
+
+.books-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==================== 书籍样式 - 精美设计 ==================== */
+.book {
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all var(--transition-fast) cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: bottom center;
+    border-radius: 2px 4px 4px 2px;
+    overflow: hidden;
+    /* 统一尺寸 */
+    height: 88px;
+    width: 26px;
+    background: linear-gradient(90deg, #6B4E3D 0%, #8B6F47 50%, #6B4E3D 100%);
+    box-shadow:
+        3px 4px 10px rgba(0,0,0,0.25),
+        inset -3px 0 6px rgba(0,0,0,0.15),
+        inset 3px 0 3px rgba(255,255,255,0.1);
+}
+
+.book:hover {
+    transform: translateY(-8px) scale(1.02);
+    z-index: 5;
+}
+
+.book:active {
+    transform: translateY(-4px) scale(0.98);
+}
+
+/* 书脊 - 主要视觉 */
+.book::before {
+    content: attr(data-title);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    font-size: 9px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    max-height: 75%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* 书脊装饰线 */
+.book::after {
+    content: '';
+    position: absolute;
+    top: 8%;
+    bottom: 8%;
+    left: 15%;
+    width: 3px;
+    background: linear-gradient(180deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.3) 20%,
+        rgba(255,255,255,0.3) 80%,
+        rgba(255,255,255,0) 100%);
+    border-radius: 2px;
+}
+
+/* 书籍颜色 - 渐变效果 */
+.book.color-1 {
+    background: linear-gradient(90deg, #A8876A 0%, #C9A86C 50%, #A8876A 100%);
+}
+.book.color-2 {
+    background: linear-gradient(90deg, #5A8FA8 0%, #7BA3B8 50%, #5A8FA8 100%);
+}
+.book.color-3 {
+    background: linear-gradient(90deg, #7A9A7A 0%, #9BA88A 50%, #7A9A7A 100%);
+}
+.book.color-4 {
+    background: linear-gradient(90deg, #B8A88A 0%, #D4B8A8 50%, #B8A88A 100%);
+}
+.book.color-5 {
+    background: linear-gradient(90deg, #A888A0 0%, #B89AA8 50%, #A888A0 100%);
+}
+.book.color-6 {
+    background: linear-gradient(90deg, #C4A07A 0%, #D4C49E 50%, #C4A07A 100%);
+}
+
+/* 书脊装饰条 */
+.book .spine-decoration {
+    position: absolute;
+    top: 15%;
+    right: 20%;
+    width: 4px;
+    height: 70%;
+    background: linear-gradient(180deg,
+        rgba(255,255,255,0.1) 0%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0.1) 100%);
+    border-radius: 2px;
+}
+
+/* 书籍选中状态 */
+.book.selected {
+    transform: translateY(-25px) scale(1.08);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35),
+        0 0 30px rgba(212, 165, 116, 0.4);
+    z-index: 10;
+}
+
+.book.animating {
+    pointer-events: none;
+}
+
+/* ==================== 书架底部装饰 ==================== */
+.bookshelf-bottom {
+    margin-top: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(180deg,
+        rgba(0,0,0,0.05) 0%,
+        transparent 100%);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.decoration-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.decor-item {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    filter: grayscale(0.3);
+    opacity: 0.8;
+}
+
+.decor-item:hover {
+    transform: translateY(-5px) scale(1.2);
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* ==================== 书籍详情模态框 ==================== */
+.book-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal) ease;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.book-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 36, 22, 0.75);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+}
+
+.book-container {
+    position: relative;
+    z-index: 1001;
+    perspective: 1500px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* 书籍详情卡片 */
+.book-detail-card {
+    background: var(--glass-bg);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    transform: scale(0.9) translateY(30px);
+    opacity: 0;
+    transition: all var(--transition-slow) cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+.book-modal.active .book-detail-card {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* 关闭按钮 */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    z-index: 10;
+    box-shadow: var(--shadow-sm);
+}
+
+.close-btn:hover {
+    background: var(--accent-gold);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.close-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* 书籍详情内容布局 */
+.book-detail-content {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 450px;
+}
+
+/* 左侧封面 */
+.book-detail-cover {
+    background: linear-gradient(135deg, var(--bg-sand) 0%, var(--bg-warm) 100%);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.book-detail-cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212,165,116,0.1) 0%, transparent 70%);
+}
+
+.cover-image {
+    width: 180px;
+    height: 260px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.2),
+        0 0 0 1px rgba(255,255,255,0.3) inset;
+    position: relative;
+    z-index: 1;
+    transition: transform var(--transition-normal);
+}
+
+.cover-image:hover {
+    transform: translateY(-5px) rotateY(-5deg);
+}
+
+.cover-icon {
+    opacity: 0.9;
+}
+
+.cover-icon[style*="display: none"] {
+    display: none !important;
+}
+
+.cover-shadow {
+    position: absolute;
+    bottom: 30px;
+    width: 160px;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.2) 0%, transparent 70%);
+    filter: blur(8px);
+}
+
+/* 右侧信息 */
+.book-detail-info {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.book-genre-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-rose));
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.book-year {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--bg-sand);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+}
+
+.book-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--wood-dark);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.book-author {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.book-divider {
+    height: 2px;
+    background: linear-gradient(90deg, 
+        var(--accent-gold) 0%, 
+        var(--accent-rose) 50%, 
+        transparent 100%);
+    margin-bottom: 24px;
+    border-radius: 1px;
+}
+
+.book-description-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.book-description-container h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--wood-primary);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.book-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    text-align: justify;
+}
+
+/* 书籍操作按钮 */
+.book-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.favorite-btn {
+    background: linear-gradient(135deg, #E8D5D5, #F0E0E0);
+    color: #8B5A5A;
+}
+
+.favorite-btn:hover {
+    background: linear-gradient(135deg, #D4A5A5, #E8C5C5);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.share-btn {
+    background: linear-gradient(135deg, var(--wood-light), var(--wood-medium));
+    color: white;
+}
+
+.share-btn:hover {
+    background: linear-gradient(135deg, var(--wood-medium), var(--wood-primary));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+}
+
+/* ==================== Toast 提示 ==================== */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--wood-dark);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-lg);
+    z-index: 2000;
+    opacity: 0;
+    transition: all var(--transition-normal);
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast-icon {
+    font-size: 1.2rem;
+}
+
+/* ==================== 动画定义 ==================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gentleSway {
+    0%, 100% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+/* ==================== 海景效果 ==================== */
+
+/* 海鸥动画 - 会在页面中动态创建 */
+.seagull {
+    position: fixed;
+    font-size: 1.2rem;
+    pointer-events: none;
+    z-index: 5;
+    animation: flyAcross 25s ease-in-out infinite;
+    opacity: 0.6;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.1));
+}
+
+.seagull:nth-child(1) {
+    top: 10%;
+    animation-delay: 0s;
+    animation-duration: 25s;
+}
+
+.seagull:nth-child(2) {
+    top: 15%;
+    animation-delay: 8s;
+    animation-duration: 22s;
+    font-size: 1.2rem;
+}
+
+.seagull:nth-child(3) {
+    top: 8%;
+    animation-delay: 15s;
+    animation-duration: 28s;
+    font-size: 1.3rem;
+}
+
+@keyframes flyAcross {
+    0% {
+        left: -50px;
+        transform: scaleX(1) translateY(0);
+    }
+    25% {
+        transform: scaleX(1) translateY(-15px);
+    }
+    50% {
+        transform: scaleX(1) translateY(8px);
+    }
+    75% {
+        transform: scaleX(1) translateY(-5px);
+    }
+    100% {
+        left: calc(100% + 50px);
+        transform: scaleX(1) translateY(0);
+    }
+}
+
+/* 吉卜力风格云朵动画 */
+.cloud {
+    position: fixed;
+    font-size: 2.5rem;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.5;
+    filter: blur(1px);
+}
+
+.cloud-1 {
+    top: 8%;
+    animation: cloudFloat 60s linear infinite;
+}
+
+.cloud-2 {
+    top: 15%;
+    animation: cloudFloat 80s linear infinite;
+    animation-delay: -30s;
+    font-size: 2rem;
+    opacity: 0.4;
+}
+
+.cloud-3 {
+    top: 5%;
+    animation: cloudFloat 100s linear infinite;
+    animation-delay: -50s;
+    font-size: 1.8rem;
+    opacity: 0.35;
+}
+
+@keyframes cloudFloat {
+    0% {
+        left: -100px;
+        transform: translateX(0);
+    }
+    100% {
+        left: calc(100% + 100px);
+        transform: translateX(0);
+    }
+}
+
+/* 海鸥详细位置 */
+.seagull-1 {
+    top: 12%;
+    animation-delay: 0s;
+    animation-duration: 30s;
+}
+
+.seagull-2 {
+    top: 18%;
+    animation-delay: -12s;
+    animation-duration: 28s;
+    font-size: 1rem;
+}
+
+.seagull-3 {
+    top: 6%;
+    animation-delay: -20s;
+    animation-duration: 35s;
+    font-size: 1.1rem;
+}
+
+/* 吉卜力风格魔法粒子 */
+.sparkle {
+    position: fixed;
+    font-size: 0.8rem;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0;
+    animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+.sparkle-1 {
+    top: 25%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.sparkle-2 {
+    top: 35%;
+    left: 75%;
+    animation-delay: 1s;
+}
+
+.sparkle-3 {
+    top: 15%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.sparkle-4 {
+    top: 40%;
+    left: 30%;
+    animation-delay: 3s;
+}
+
+.sparkle-5 {
+    top: 20%;
+    left: 85%;
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-10px) scale(1);
+    }
+}
+
+/* 书籍入场动画 */
+.book {
+    animation: bookEntrance 0.6s ease-out forwards;
+}
+
+@keyframes bookEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 逐层延迟 - 4层书架，每层12本书 */
+/* 第1层 */
+.shelf:nth-child(1) .book:nth-child(1) { animation-delay: 0.05s; }
+.shelf:nth-child(1) .book:nth-child(2) { animation-delay: 0.08s; }
+.shelf:nth-child(1) .book:nth-child(3) { animation-delay: 0.11s; }
+.shelf:nth-child(1) .book:nth-child(4) { animation-delay: 0.14s; }
+.shelf:nth-child(1) .book:nth-child(5) { animation-delay: 0.17s; }
+.shelf:nth-child(1) .book:nth-child(6) { animation-delay: 0.20s; }
+.shelf:nth-child(1) .book:nth-child(7) { animation-delay: 0.23s; }
+.shelf:nth-child(1) .book:nth-child(8) { animation-delay: 0.26s; }
+.shelf:nth-child(1) .book:nth-child(9) { animation-delay: 0.29s; }
+.shelf:nth-child(1) .book:nth-child(10) { animation-delay: 0.32s; }
+.shelf:nth-child(1) .book:nth-child(11) { animation-delay: 0.35s; }
+.shelf:nth-child(1) .book:nth-child(12) { animation-delay: 0.38s; }
+/* 第2层 */
+.shelf:nth-child(2) .book:nth-child(1) { animation-delay: 0.42s; }
+.shelf:nth-child(2) .book:nth-child(2) { animation-delay: 0.45s; }
+.shelf:nth-child(2) .book:nth-child(3) { animation-delay: 0.48s; }
+.shelf:nth-child(2) .book:nth-child(4) { animation-delay: 0.51s; }
+.shelf:nth-child(2) .book:nth-child(5) { animation-delay: 0.54s; }
+.shelf:nth-child(2) .book:nth-child(6) { animation-delay: 0.57s; }
+.shelf:nth-child(2) .book:nth-child(7) { animation-delay: 0.60s; }
+.shelf:nth-child(2) .book:nth-child(8) { animation-delay: 0.63s; }
+.shelf:nth-child(2) .book:nth-child(9) { animation-delay: 0.66s; }
+.shelf:nth-child(2) .book:nth-child(10) { animation-delay: 0.69s; }
+.shelf:nth-child(2) .book:nth-child(11) { animation-delay: 0.72s; }
+.shelf:nth-child(2) .book:nth-child(12) { animation-delay: 0.75s; }
+/* 第3层 */
+.shelf:nth-child(3) .book:nth-child(1) { animation-delay: 0.78s; }
+.shelf:nth-child(3) .book:nth-child(2) { animation-delay: 0.81s; }
+.shelf:nth-child(3) .book:nth-child(3) { animation-delay: 0.84s; }
+.shelf:nth-child(3) .book:nth-child(4) { animation-delay: 0.87s; }
+.shelf:nth-child(3) .book:nth-child(5) { animation-delay: 0.90s; }
+.shelf:nth-child(3) .book:nth-child(6) { animation-delay: 0.93s; }
+.shelf:nth-child(3) .book:nth-child(7) { animation-delay: 0.96s; }
+.shelf:nth-child(3) .book:nth-child(8) { animation-delay: 0.99s; }
+.shelf:nth-child(3) .book:nth-child(9) { animation-delay: 1.02s; }
+.shelf:nth-child(3) .book:nth-child(10) { animation-delay: 1.05s; }
+.shelf:nth-child(3) .book:nth-child(11) { animation-delay: 1.08s; }
+.shelf:nth-child(3) .book:nth-child(12) { animation-delay: 1.11s; }
+/* 第4层 */
+.shelf:nth-child(4) .book:nth-child(1) { animation-delay: 1.14s; }
+.shelf:nth-child(4) .book:nth-child(2) { animation-delay: 1.17s; }
+.shelf:nth-child(4) .book:nth-child(3) { animation-delay: 1.20s; }
+.shelf:nth-child(4) .book:nth-child(4) { animation-delay: 1.23s; }
+.shelf:nth-child(4) .book:nth-child(5) { animation-delay: 1.26s; }
+.shelf:nth-child(4) .book:nth-child(6) { animation-delay: 1.29s; }
+.shelf:nth-child(4) .book:nth-child(7) { animation-delay: 1.32s; }
+.shelf:nth-child(4) .book:nth-child(8) { animation-delay: 1.35s; }
+.shelf:nth-child(4) .book:nth-child(9) { animation-delay: 1.38s; }
+.shelf:nth-child(4) .book:nth-child(10) { animation-delay: 1.41s; }
+.shelf:nth-child(4) .book:nth-child(11) { animation-delay: 1.44s; }
+.shelf:nth-child(4) .book:nth-child(12) { animation-delay: 1.47s; }
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 2rem;
+    }
+    
+    .site-subtitle {
+        font-size: 1rem;
+    }
+    
+    .header-stats {
+        gap: 10px;
+    }
+    
+    .stat-item {
+        padding: 6px 12px;
+    }
+    
+    .stat-number {
+        font-size: 1.1rem;
+    }
+    
+    .bookshelf-top {
+        padding: 0 15px 10px;
+    }
+    
+    .bookshelf-title {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+    
+    .bookshelf {
+        padding: 20px 15px 12px;
+    }
+    
+    .shelf {
+        padding: 0 15px;
+        min-height: 95px;
+    }
+
+    .book::before {
+        font-size: 7px;
+    }
+    
+    /* 模态框调整 */
+    .book-detail-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .book-detail-cover {
+        padding: 30px;
+        min-height: 200px;
+    }
+    
+    .cover-image {
+        width: 140px;
+        height: 200px;
+    }
+    
+    .book-detail-info {
+        padding: 25px;
+    }
+    
+    .book-title {
+        font-size: 1.5rem;
+    }
+    
+    .book-actions {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 25px 15px 15px;
+    }
+    
+    .site-title {
+        font-size: 1.75rem;
+    }
+    
+    .main-content {
+        padding: 20px 10px 40px;
+    }
+    
+    .plant-left, .plant-right {
+        font-size: 1.8rem;
+    }
+    
+    .bookshelf-title {
+        display: none;
+    }
+    
+    .books-container {
+        gap: 2px;
+        padding: 0 3px 3px;
+        min-height: 75px;
+    }
+    
+    .decoration-items {
+        gap: 12px;
+    }
+    
+    .decor-item {
+        font-size: 1.2rem;
+    }
+    
+    .book-modal {
+        padding: 10px;
+    }
+    
+    .book-detail-card {
+        border-radius: var(--radius-lg);
+    }
+    
+    .book-detail-cover {
+        padding: 25px;
+        min-height: 160px;
+    }
+    
+    .cover-image {
+        width: 110px;
+        height: 160px;
+    }
+    
+    .cover-icon {
+        font-size: 3rem;
+    }
+    
+    .book-detail-info {
+        padding: 20px;
+    }
+    
+    .book-title {
+        font-size: 1.3rem;
+    }
+    
+    .book-author {
+        font-size: 1rem;
+    }
+    
+    .book-description {
+        font-size: 0.95rem;
+    }
+}
+
+/* ==================== 滚动条样式 ==================== */
+.page::-webkit-scrollbar,
+.book-description-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.page::-webkit-scrollbar-track,
+.book-description-container::-webkit-scrollbar-track {
+    background: rgba(139,105,20,0.1);
+    border-radius: 3px;
+}
+
+.page::-webkit-scrollbar-thumb,
+.book-description-container::-webkit-scrollbar-thumb {
+    background: var(--wood-light);
+    border-radius: 3px;
+}
+
+.page::-webkit-scrollbar-thumb:hover,
+.book-description-container::-webkit-scrollbar-thumb:hover {
+    background: var(--wood-medium);
+}
