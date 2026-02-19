@@ -9,6 +9,9 @@ const booksData = [
         genre: "爱情小说",
         description: "这是简·奥斯汀最著名的作品，讲述了班纳特家的五个女儿在19世纪英国乡间的婚姻与爱情故事。主人公伊丽莎白·班纳特与达西先生从最初的误解与偏见，到逐渐认识彼此、消除隔阂，最终走向真爱的过程。小说以细腻的笔触描绘了当时英国社会的阶层观念和婚姻观，展现了作者对人性的深刻洞察。",
         color: 1,
+        title_en: "Pride and Prejudice",
+        author_en: "Jane Austen",
+        description_en: "Jane Austen's most famous work, telling the story of the five Bennet daughters and their marriage prospects in 19th-century rural England.",
         cover: "books/covers/cover_01.jpg",
         shelf: 1
     },
@@ -20,6 +23,9 @@ const booksData = [
         genre: "家庭伦理",
         description: "奥斯汀的处女作，讲述达什伍德家的三姐妹在父亲去世后，从庄园迁居德文郡后的生活经历。姐姐埃莉诺代表'理智'，妹妹玛丽安代表'情感'，两姐妹在爱情与生活中展现出不同的处世态度，最终都找到了属于自己的幸福。小说探讨了理性与情感的平衡问题。",
         color: 2,
+        title_en: "Sense and Sensibility",
+        author_en: "Jane Austen",
+        description_en: "Austen's debut novel, telling the story of the three Dashwood sisters after their father's death.",
         cover: "books/covers/cover_02.jpg",
         shelf: 1
     },
@@ -31,6 +37,9 @@ const booksData = [
         genre: "社会讽刺",
         description: "讲述了美丽聪明但有些自负的爱玛·伍德豪斯在乡村小镇海伯里的生活。她热衷于做媒，却总是误判他人感情，经历了一系列误会后才认识到自己的不足。这部作品以其精妙的人物刻画和对当时社会的幽默讽刺而著称。",
         color: 3,
+        title_en: "Emma",
+        author_en: "Jane Austen",
+        description_en: "Tells the story of the beautiful, intelligent but somewhat conceited Emma Woodhouse's life in the village of Highbury.",
         cover: "books/covers/cover_03.jpg",
         shelf: 1
     },
@@ -42,6 +51,9 @@ const booksData = [
         genre: "现代文学",
         description: "1920年代美国爵士时代的缩影。神秘的富豪盖茨比在长岛举办奢华派对，只为吸引旧爱黛西的注意。叙述者尼克目睹了这场注定悲剧的爱情故事，以及美国梦的破灭。小说以其优美的文笔和对美国社会的深刻批判成为文学经典。",
         color: 4,
+        title_en: "The Great Gatsby",
+        author_en: "F. Scott Fitzgerald",
+        description_en: "A microcosm of the American Jazz Age in the 1920s. The mysterious millionaire Gatsby throws lavish parties on Long Island.",
         cover: "books/covers/cover_04.jpg",
         shelf: 1
     },
@@ -53,6 +65,9 @@ const booksData = [
         genre: "冒险小说",
         description: "老渔夫圣地亚哥连续84天没有捕到鱼，第85天独自出海捕获巨大的马林鱼，却在返航途中被鲨鱼群啃食殆尽，只带回骨架。小说展现了人类面对自然和命运时的坚韧与尊严，体现了'人可以被毁灭，但不能被打败'的精神。",
         color: 5,
+        title_en: "The Old Man and the Sea",
+        author_en: "Ernest Hemingway",
+        description_en: "The old fisherman Santiago went 84 days without catching a fish. On the 85th day, he caught a huge marlin.",
         cover: "books/covers/cover_05.jpg",
         shelf: 1
     },
@@ -66,6 +81,9 @@ const booksData = [
         genre: "社会批判",
         description: "孤儿奥利弗·特威斯特在济贫院长大，历经逃亡、落入贼窝、被收养等曲折经历，最终查明身世并获得幸福。小说深刻揭露了19世纪英国济贫法的残酷和底层社会的黑暗，是狄更斯最具社会批判力的作品之一。",
         color: 1,
+        title_en: "Oliver Twist",
+        author_en: "Charles Dickens",
+        description_en: "Orphan Oliver Twist grows up in a workhouse, experiencing escape, falling into a den of thieves, and finally finding happiness.",
         cover: "books/covers/cover_06.jpg",
         shelf: 1
     },
@@ -77,6 +95,9 @@ const booksData = [
         genre: "历史小说",
         description: "以法国大革命为背景，讲述了伦敦和巴黎两座城市中人物的命运交织。西德尼·卡顿为了露西的幸福，最终牺牲自己代替她的丈夫走上断头台。小说以'那是最好的时代，那是最坏的时代'开篇，展现了革命时期的混乱与人性的光辉。",
         color: 2,
+        title_en: "A Tale of Two Cities",
+        author_en: "Charles Dickens",
+        description_en: "Set against the backdrop of the French Revolution, telling the interweaving fate of characters in London and Paris.",
         cover: "books/covers/cover_07.jpg",
         shelf: 1
     },
@@ -88,6 +109,9 @@ const booksData = [
         genre: "成长小说",
         description: "这部半自传体小说讲述了大卫从幼年遭继父虐待，到流浪、求学、工作，最终成为作家的成长历程。小说塑造了众多经典人物形象，如乐观的贝西姨婆、狡诈的尤利亚·希普等，展现了维多利亚时代英国社会的方方面面。",
         color: 3,
+        title_en: "David Copperfield",
+        author_en: "Charles Dickens",
+        description_en: "Dickens's most autobiographical novel, tracing David's growth from a miserable childhood to maturity.",
         cover: "books/covers/cover_08.jpg",
         shelf: 1
     },
@@ -101,6 +125,9 @@ const booksData = [
         genre: "哥特小说",
         description: "讲述希斯克利夫与凯瑟琳之间激烈而扭曲的爱情故事。希斯克利夫从小被收养，深爱凯瑟琳却因社会地位差距而无法结合，最终复仇两家人。小说以其强烈的情感、独特的叙事结构和荒凉的氛围描写成为英国文学经典。",
         color: 4,
+        title_en: "Wuthering Heights",
+        author_en: "Emily Brontë",
+        description_en: "A Gothic novel full of passion and revenge. Heathcliff's adoption leads to jealousy and abuse from Hindley.",
         cover: "books/covers/cover_09.jpg",
         shelf: 1
     },
@@ -112,6 +139,9 @@ const booksData = [
         genre: "成长小说",
         description: "孤儿简·爱从寄宿学校到罗切斯特庄园担任家庭教师，与雇主罗切斯特相爱。在发现罗切斯特已有疯妻后，简·爱毅然离开，最终在获得独立和继承遗产后与失明的罗切斯特重逢。小说强调女性独立与人格平等，是早期女性主义文学的代表。",
         color: 5,
+        title_en: "Jane Eyre",
+        author_en: "Charlotte Brontë",
+        description_en: "Orphan Jane Eyre becomes a governess at Thornfield Hall and falls in love with the master Rochester.",
         cover: "books/covers/cover_10.jpg",
         shelf: 1
     },
@@ -125,6 +155,9 @@ const booksData = [
         genre: "哲学小说",
         description: "以法国后印象派画家高更为原型，讲述了证券经纪人斯特里克兰德突然抛妻弃子，追求艺术理想的故事。他放弃世俗的'六便士'，去追寻心中的'月亮'，最终在塔希提岛创作出惊世之作。小说探讨了艺术、理想与世俗生活的冲突。",
         color: 1,
+        title_en: "The Moon and Sixpence",
+        author_en: "W. Somerset Maugham",
+        description_en: "Inspired by the life of painter Paul Gauguin, telling the story of stockbroker Charles Strickland.",
         cover: "books/covers/cover_11.jpg",
         shelf: 1
     },
@@ -136,6 +169,9 @@ const booksData = [
         genre: "成长小说",
         description: "讲述了菲利普·凯里从孤儿到医学院学生的成长历程。他患有先天性残疾，在成长过程中不断挣脱宗教、情欲、世俗等'枷锁'的束缚，最终找到自我和人生意义。这是毛姆最具自传色彩的作品，深刻探讨了人性的复杂与自由。",
         color: 2,
+        title_en: "Of Human Bondage",
+        author_en: "W. Somerset Maugham",
+        description_en: "A semi-autobiographical Bildungsroman. Philip Carey has a clubfoot that affects his self-confidence.",
         cover: "books/covers/cover_12.jpg",
         shelf: 1
     },
@@ -147,6 +183,9 @@ const booksData = [
         genre: "哲学小说",
         description: "以第一次世界大战为背景，讲述飞行员拉里在战友牺牲后对人生意义产生质疑，辞去工作踏上精神追寻之路。他研读哲学、游历欧洲、在印度寻找精神归宿。小说探讨了物质与精神、世俗与超越的人生选择。",
         color: 3,
+        title_en: "The Razor's Edge",
+        author_en: "W. Somerset Maugham",
+        description_en: "American pilot Larry Darrell seeks the meaning of life through wandering, studying, and spiritual exploration.",
         cover: "books/covers/cover_13.jpg",
         shelf: 2
     },
@@ -160,6 +199,9 @@ const booksData = [
         genre: "史诗文学",
         description: "以1812年拿破仑入侵俄国为历史背景，通过五个贵族家庭的故事，展现了广阔的社会画面和深刻的人性探索。小说既有宏大的战争场面，又有细腻的家庭生活；既有对历史规律的思考，又有对个人命运的关怀，是世界文学史上的巅峰之作。",
         color: 4,
+        title_en: "War and Peace",
+        author_en: "Leo Tolstoy",
+        description_en: "An epic novel set against the backdrop of Napoleon's invasion of Russia.",
         cover: "books/covers/cover_14.jpg",
         shelf: 2
     },
@@ -171,6 +213,9 @@ const booksData = [
         genre: "爱情悲剧",
         description: "讲述贵族妇女安娜与年轻军官渥伦斯基的不伦之恋，以及这段感情给她的生活带来的毁灭性打击。小说以'幸福的家庭都是相似的，不幸的家庭各有各的不幸'开篇，深刻剖析了19世纪俄国贵族社会的虚伪道德和人性的复杂。",
         color: 5,
+        title_en: "Anna Karenina",
+        author_en: "Leo Tolstoy",
+        description_en: "A tragic story of love and marriage. Anna Karenina falls in love with the young officer Vronsky.",
         cover: "books/covers/cover_15.jpg",
         shelf: 2
     },
@@ -182,6 +227,9 @@ const booksData = [
         genre: "心理小说",
         description: "贫穷的大学生拉斯柯尔尼科夫为了验证自己的'超人理论'，谋杀了一位放高利贷的老妇人和她的妹妹。小说深入描绘了主人公犯罪后的心理折磨、道德挣扎，以及最终通过索尼娅的爱获得精神救赎的过程。是对人性善恶的深刻探索。",
         color: 6,
+        title_en: "Crime and Punishment",
+        author_en: "Fyodor Dostoevsky",
+        description_en: "Poor student Raskolnikov theoretically justifies murder and kills an old moneylender, but is tormented by conscience.",
         cover: "books/covers/cover_16.jpg",
         shelf: 2
     },
@@ -193,6 +241,9 @@ const booksData = [
         genre: "哲学小说",
         description: "陀思妥耶夫斯基的绝笔之作。通过老卡拉马佐夫三个儿子（好色的德米特里、理智的伊万、虔诚的阿辽沙）与私生子斯麦尔佳科夫之间的复杂关系，探讨了信仰与理性、善与恶、自由与责任等永恒的哲学问题。",
         color: 1,
+        title_en: "The Brothers Karamazov",
+        author_en: "Fyodor Dostoevsky",
+        description_en: "Dostoevsky's last and greatest work. The murder of the father Fyodor Karamazov reflects the conflict between the three brothers.",
         cover: "books/covers/cover_17.jpg",
         shelf: 2
     },
@@ -204,6 +255,9 @@ const booksData = [
         genre: "魔幻现实",
         description: "魔鬼撒旦化装成魔术师来到莫斯科，引发一系列荒诞事件。小说交织了两个时空：20世纪30年代莫斯科的荒诞现实，和二世纪彼拉多审判耶稣的历史故事。是对极权社会的讽刺，也是对勇气、艺术和爱的赞歌。",
         color: 2,
+        title_en: "Master and Margarita",
+        author_en: "Mikhail Bulgakov",
+        description_en: "A satirical fantasy novel. The Devil Woland arrives in Moscow with his entourage.",
         cover: "books/covers/cover_18.jpg",
         shelf: 2
     },
@@ -217,6 +271,9 @@ const booksData = [
         genre: "存在主义",
         description: "默尔索对母亲的去世、女友的爱情、杀人的罪行都表现出无所谓的态度。这种'冷漠'让他被社会判处死刑。加缪通过这个形象提出了存在主义的核心问题：在一个无意义的世界里，人如何寻找意义？'今天，妈妈死了。也许是昨天，我不知道'的开篇成为文学史上的经典。",
         color: 3,
+        title_en: "The Stranger",
+        author_en: "Albert Camus",
+        description_en: "Meursault shows indifference to his mother's death and kills an Arab on a beach for no clear reason.",
         cover: "books/covers/cover_19.jpg",
         shelf: 2
     },
@@ -228,6 +285,9 @@ const booksData = [
         genre: "存在主义",
         description: "阿尔及利亚城市奥兰突发鼠疫，全城被封锁。医生里厄、记者朗贝尔、神甫帕纳卢等不同身份的人面对灾难做出了不同的选择。小说以鼠疫隐喻纳粹占领和人类处境，探讨了在荒诞世界中人的尊严、团结和反抗。",
         color: 4,
+        title_en: "The Plague",
+        author_en: "Albert Camus",
+        description_en: "Allegory of the Nazi occupation of France. When a plague strikes the Algerian city of Oran, the city is sealed off.",
         cover: "books/covers/cover_20.jpg",
         shelf: 2
     },
@@ -239,6 +299,9 @@ const booksData = [
         genre: "存在主义",
         description: "历史学家洛根丁在布城研究历史时，突然对周围的一切产生'恶心'感——事物的存在变得荒诞、多余、令人作呕。这是萨特第一部小说，以文学形式阐述了存在主义哲学：'存在先于本质'，人必须为自己的存在创造意义。",
         color: 5,
+        title_en: "Nausea",
+        author_en: "Jean-Paul Sartre",
+        description_en: "Existentialist novel. Historian Roquentin experiences a sense of nausea and existential crisis.",
         cover: "books/covers/cover_21.jpg",
         shelf: 2
     },
@@ -250,6 +313,9 @@ const booksData = [
         genre: "意识流",
         description: "七卷本巨著，通过叙述者马塞尔的回忆，展现了法国贵族社会的生活画卷。那块著名的玛德琳蛋糕触发了 involuntary memory（非自愿记忆），让过去重现。小说革新了小说的叙事方式，是对时间、记忆、艺术的深度探索。",
         color: 6,
+        title_en: "In Search of Lost Time",
+        author_en: "Marcel Proust",
+        description_en: "A monumental modernist novel in seven volumes exploring time, memory, art, and love.",
         cover: "books/covers/cover_22.jpg",
         shelf: 2
     },
@@ -263,6 +329,9 @@ const booksData = [
         genre: "诗剧",
         description: "浮士德与魔鬼梅菲斯特签订契约，用自己的灵魂换取现世的快乐与知识。他经历了爱情、政治、艺术、美的追求，最终在围海造田的宏伟工程中找到人生的意义。歌德耗时60年完成的这部作品，是德国文学的巅峰，是对人类精神的伟大颂歌。",
         color: 1,
+        title_en: "Faust",
+        author_en: "Goethe",
+        description_en: "A poetic drama in two parts. The scholar Faust makes a pact with the devil Mephistopheles.",
         cover: "books/covers/cover_23.jpg",
         shelf: 2
     },
@@ -274,6 +343,9 @@ const booksData = [
         genre: "教育小说",
         description: "年轻工程师汉斯到瑞士达沃斯肺结核疗养院探望表哥，原本停留三周，却住了七年。疗养院成为一个微缩的欧洲社会，各种思想在此碰撞。小说以魔山象征着与世隔绝的精神世界，探讨了时间、疾病、死亡和欧洲文明命运。",
         color: 2,
+        title_en: "The Magic Mountain",
+        author_en: "Thomas Mann",
+        description_en: "Hans Castorp visits a tuberculosis sanatorium in the Alps for three weeks and stays for seven years.",
         cover: "books/covers/cover_24.jpg",
         shelf: 2
     },
@@ -287,6 +359,9 @@ const booksData = [
         genre: "反乌托邦",
         description: "描绘了一个极权主义社会，老大哥监视着每个人，历史被不断改写，语言被简化为'新话'。主人公温斯顿试图反抗，最终被思想警察捕获并彻底'改造'。小说对极权主义的深刻预言使其成为20世纪最重要的政治寓言之一。",
         color: 3,
+        title_en: "1984",
+        author_en: "George Orwell",
+        description_en: "A dystopian classic. In a totalitarian society where the Party monitors everything, Winston Smith secretly rebels.",
         cover: "books/covers/cover_25.jpg",
         shelf: 3
     },
@@ -298,6 +373,9 @@ const booksData = [
         genre: "反乌托邦",
         description: "未来社会通过基因改造、睡眠教学和药物'索玛'实现了完美的社会秩序，人们从出生就被划分为不同等级，永远快乐但没有自由。野蛮人约翰从保留地进入这个'美丽新世界'，因无法适应而自杀。是对技术统治和消费社会的深刻预警。",
         color: 4,
+        title_en: "Brave New World",
+        author_en: "Aldous Huxley",
+        description_en: "A dystopia where humans are genetically designed and socially conditioned to be content with their roles.",
         cover: "books/covers/cover_26.jpg",
         shelf: 3
     },
@@ -309,6 +387,9 @@ const booksData = [
         genre: "科幻",
         description: "哈里·谢顿发明了'心理史学'，预言统治了整个银河系的帝国即将崩溃，随之而来的是三万年的黑暗时代。他建立'基地'来缩短这段黑暗时期。七部基地史诗讲述了人类文明在银河尺度上的兴衰，是科幻史上的里程碑之作。",
         color: 5,
+        title_en: "Foundation",
+        author_en: "Isaac Asimov",
+        description_en: "Hari Seldon predicts the fall of the Galactic Empire and establishes the Foundation to preserve knowledge.",
         cover: "books/covers/cover_27.jpg",
         shelf: 3
     },
@@ -320,6 +401,9 @@ const booksData = [
         genre: "科幻",
         description: "机器人三大定律首次在此书中提出：一、机器人不得伤害人类；二、机器人必须服从人类的命令；三、机器人必须保护自己。通过一系列短篇故事，阿西莫夫探讨了人工智能的伦理问题，这些思考至今仍深刻影响着AI领域。",
         color: 6,
+        title_en: "I, Robot",
+        author_en: "Isaac Asimov",
+        description_en: "A collection of short stories exploring the relationship between humans and robots through the Three Laws of Robotics.",
         cover: "books/covers/cover_28.jpg",
         shelf: 3
     },
@@ -331,6 +415,9 @@ const booksData = [
         genre: "科幻史诗",
         description: "在遥远的未来，沙漠星球阿拉基斯是宇宙中唯一的香料产地。各大家族为争夺这个资源展开权力斗争。保罗·厄崔迪在这场政治阴谋中成长，成为弗雷曼人的救世主。作品融合了中东政治、生态学、宗教和哲学，是'太空歌剧'的巅峰之作。",
         color: 1,
+        title_en: "Dune",
+        author_en: "Frank Herbert",
+        description_en: "A sci-fi epic set on the desert planet Arrakis, the only source of the spice melange.",
         cover: "books/covers/cover_29.jpg",
         shelf: 3
     },
@@ -342,6 +429,9 @@ const booksData = [
         genre: "硬科幻",
         description: "一块神秘的黑色石板引导人类从猿猴进化为智慧生命。数百万年后，同样的石板在月球被发现，指向木星。宇航员与AI飞船电脑HAL 9000一同前往，展开了一场关于人类起源和进化的壮丽探索。是对人类命运和宇宙奥秘的深度思考。",
         color: 2,
+        title_en: "2001: A Space Odyssey",
+        author_en: "Arthur C. Clarke",
+        description_en: "A mysterious black monolith guides human evolution. The spaceship Discovery is sent to Jupiter with the AI HAL 9000.",
         cover: "books/covers/cover_30.jpg",
         shelf: 3
     },
@@ -353,6 +443,9 @@ const booksData = [
         genre: "赛博朋克",
         description: "黑客凯斯被雇佣进行最后一次黑客任务，目标是一个强大的AI。吉布森在这部小说中创造了'赛博空间'（cyberspace）一词，描绘了一个高科技低生活的未来世界。它开启了赛博朋克流派，预示了互联网时代的到来。",
         color: 3,
+        title_en: "Neuromancer",
+        author_en: "William Gibson",
+        description_en: "The foundational cyberpunk novel. Washed-up hacker Case is hired for one last job: to hack the AI Wintermute.",
         cover: "books/covers/cover_31.jpg",
         shelf: 3
     },
@@ -364,6 +457,9 @@ const booksData = [
         genre: "科幻",
         description: "在后核战地球，赏金猎人里克·德卡德负责追捕逃亡的仿生人。在任务中，他逐渐质疑：什么是真实？什么是人性？仿生人和人类的界限在哪里？这部小说被改编为电影《银翼杀手》，是对人性和真实的深刻拷问。",
         color: 4,
+        title_en: "Do Androids Dream of Electric Sheep?",
+        author_en: "Philip K. Dick",
+        description_en: "In a post-apocalyptic world, bounty hunter Rick Deckard 'retires' escaped androids.",
         cover: "books/covers/cover_32.jpg",
         shelf: 3
     },
@@ -377,6 +473,9 @@ const booksData = [
         genre: "奇幻史诗",
         description: "在中土世界，黑暗魔君索伦的至尊魔戒重现，必须被销毁才能阻止他统治世界。霍比特人弗罗多承担了这个使命，与伙伴们踏上危险的旅程。托尔金创造了一个完整的奇幻世界，融合了北欧神话、天主教思想和战争体验，是现代奇幻文学的奠基之作。",
         color: 5,
+        title_en: "The Lord of the Rings",
+        author_en: "J.R.R. Tolkien",
+        description_en: "The hobbit Frodo inherits the One Ring and must destroy it in the fires of Mount Doom.",
         cover: "books/covers/cover_33.jpg",
         shelf: 3
     },
@@ -388,6 +487,9 @@ const booksData = [
         genre: "奇幻冒险",
         description: "霍比特人比尔博·巴金斯被巫师甘道夫选中，加入一群矮人的冒险，去从恶龙史矛革手中夺回孤山。在这段旅程中，比尔博意外发现了一枚能让人隐身的魔戒——这将改变中土世界的命运。这是一部轻松愉悦、充满童心的奇幻冒险小说。",
         color: 6,
+        title_en: "The Hobbit",
+        author_en: "J.R.R. Tolkien",
+        description_en: "Bilbo Baggins is swept away by the wizard Gandalf and thirteen dwarves on a quest to reclaim the Lonely Mountain.",
         cover: "books/covers/cover_34.jpg",
         shelf: 3
     },
@@ -401,6 +503,9 @@ const booksData = [
         genre: "魔幻现实",
         description: "布恩迪亚家族七代人的传奇故事，与哥伦比亚小镇马孔多的兴衰交织在一起。真实的日常与魔幻的事件自然共存：飞上天的美女、下了四年的雨、预示家族命运的家谱。马尔克斯用魔幻现实主义手法，展现了拉美历史的孤独与循环。'多年以后，面对行刑队，奥雷里亚诺上校将会回想起父亲带他去见识冰块的那个遥远的下午。'",
         color: 1,
+        title_en: "One Hundred Years of Solitude",
+        author_en: "Gabriel García Márquez",
+        description_en: "Multi-generational saga of the Buendía family in the fictional town of Macondo, blending magical realism with reality.",
         cover: "books/covers/cover_35.jpg",
         shelf: 3
     },
@@ -412,6 +517,9 @@ const booksData = [
         genre: "爱情小说",
         description: "弗洛伦蒂诺·阿里萨对费尔明娜·达萨一见钟情，但两人最终没能在一起。费尔明娜嫁给了医生乌尔比诺。五十一年九个月零四天后，乌尔比诺去世，弗洛伦蒂诺重新出现，表达了他永恒的爱意。这是一部关于爱情的百科全书，穷尽了爱情的各种可能性。",
         color: 2,
+        title_en: "Love in the Time of Cholera",
+        author_en: "Gabriel García Márquez",
+        description_en: "Florentino Ariza falls in love with Fermina Daza in their youth. Florentino waits 51 years for her husband to die.",
         cover: "books/covers/cover_36.jpg",
         shelf: 3
     },
@@ -423,6 +531,9 @@ const booksData = [
         genre: "形而上小说",
         description: "博尔赫斯的短篇小说集，包含《小径分岔的花园》、《特隆、乌克巴尔、奥比斯·特蒂乌斯》等名篇。他用虚构的百科全书、无限分岔的迷宫、图书馆等意象，探讨了时间、无限、真实与虚构等哲学问题。开创了元小说的先河，影响了整个后现代文学。",
         color: 3,
+        title_en: "Ficciones",
+        author_en: "Jorge Luis Borges",
+        description_en: "A collection of short stories blending philosophy, mathematics, literature and fantasy.",
         cover: "books/covers/cover_37.jpg",
         shelf: 4
     },
@@ -434,6 +545,9 @@ const booksData = [
         genre: "形而上小说",
         description: "包含著名的《环形废墟》和《巴别图书馆》。在《巴别图书馆》中，宇宙就是一个无限图书馆，包含所有可能的书籍，人们毕生寻找能够解释一切的书。博尔赫斯用最简洁的文字构建最复杂的迷宫，是对知识和无限的哲学思考。",
         color: 4,
+        title_en: "The Aleph",
+        author_en: "Jorge Luis Borges",
+        description_en: "A collection of stories exploring infinity, time, and memory through philosophical and mathematical concepts.",
         cover: "books/covers/cover_38.jpg",
         shelf: 4
     },
@@ -447,6 +561,9 @@ const booksData = [
         genre: "青春文学",
         description: "1960年代末的日本，大学生渡边彻深爱着直子，但直子因男友自杀而精神不稳定。同时渡边与绿子相遇，感受到生命的活力。在直子自杀后，渡边在孤独中流浪。村上春树用细腻的笔触描绘了青春、爱情、死亡和孤独，是日本战后文学的代表作。",
         color: 5,
+        title_en: "Norwegian Wood",
+        author_en: "Haruki Murakami",
+        description_en: "Toru Watanabe looks back on his youth in 1960s Tokyo, his relationships with Naoko and Midori.",
         cover: "books/covers/cover_39.jpg",
         shelf: 4
     },
@@ -458,6 +575,9 @@ const booksData = [
         genre: "魔幻现实",
         description: "两条平行的故事线：15岁的田村卡夫卡离家出走，来到海边图书馆；老人中田能和猫对话，受神秘人指使杀了一人。两条线最终交织，在'世界的入口'相遇。这是村上最具野心的作品之一，融合了俄狄浦斯神话、二战历史和超现实元素。",
         color: 6,
+        title_en: "Kafka on the Shore",
+        author_en: "Haruki Murakami",
+        description_en: "Two parallel narratives: 15-year-old Kafka runs away from home, while old Nakata can talk to cats.",
         cover: "books/covers/cover_40.jpg",
         shelf: 4
     },
@@ -469,6 +589,9 @@ const booksData = [
         genre: "唯美主义",
         description: "岛村三次前往雪国，每次都与艺伎驹子相遇。驹子对岛村倾注了真挚的感情，但岛村始终保持着旁观者的态度。'穿过县界长长的隧道，便是雪国'的开篇充满诗意。川端康成以极致的日式美学，描绘了虚无之美和徒劳之爱，1968年获得诺贝尔文学奖。",
         color: 1,
+        title_en: "Snow Country",
+        author_en: "Yasunari Kawabata",
+        description_en: "Shimamura visits a snow country hot spring resort and meets the geisha Komako.",
         cover: "books/covers/cover_41.jpg",
         shelf: 4
     },
@@ -480,6 +603,9 @@ const booksData = [
         genre: "私小说",
         description: "太宰治的绝笔之作，大庭叶藏的三篇手记记录了他如何一步步失去做人的资格。作为一个敏感的富家子弟，叶藏无法理解人类社会的规则，只能用搞笑来讨好他人。他经历了学业失败、感情挫折、药物成瘾，最终被送进精神病院。是对战后日本社会和个体异化的深刻剖析。",
         color: 2,
+        title_en: "No Longer Human",
+        author_en: "Osamu Dazai",
+        description_en: "The notebooks of Oba Yozo, who feels unable to understand human beings and creates a clown persona.",
         cover: "books/covers/cover_42.jpg",
         shelf: 4
     },
@@ -491,6 +617,9 @@ const booksData = [
         genre: "唯美主义",
         description: "口吃青年沟口在京都金阁寺出家，金阁的绝美让他既着迷又自卑。在战火中金阁幸存，沟口觉得金阁的美永恒不变，永远拒绝着他。最终他烧毁了金阁。小说根据真实事件改编，探讨了美与毁灭、艺术与人生的关系，是三岛由纪夫的代表作。",
         color: 3,
+        title_en: "The Temple of the Golden Pavilion",
+        author_en: "Yukio Mishima",
+        description_en: "Mizoguchi becomes obsessed with the beauty of the Golden Pavilion temple and eventually burns it down.",
         cover: "books/covers/cover_43.jpg",
         shelf: 4
     },
@@ -502,6 +631,9 @@ const booksData = [
         genre: "讽刺小说",
         description: "一只无名猫的视角，观察主人苦沙弥老师和他周围的知识分子。猫用幽默讽刺的笔调，揭露了明治时期日本知识分子的虚伪、滑稽和无奈。'吾辈是猫，名字还没有'的开篇充满趣味。这是日本近代文学的开山之作，开创了讽刺小说的传统。",
         color: 4,
+        title_en: "I Am a Cat",
+        author_en: "Natsume Sōseki",
+        description_en: "A satirical novel narrated by a cat who observes human follies in Meiji-era Japanese society.",
         cover: "books/covers/cover_44.jpg",
         shelf: 4
     },
@@ -513,6 +645,9 @@ const booksData = [
         genre: "心理小说",
         description: "一个年轻人听一位老先生讲述他的故事：老先生与学生朋友K同时爱上了房东家的女儿，通过心计，老先生赢得了小姐。K自杀后，老先生陷入了永久的内疚。小说深入探讨了日本现代化过程中个人主义的困境、利己主义的阴暗面，是夏目漱石最深刻的代表作。",
         color: 5,
+        title_en: "Kokoro",
+        author_en: "Natsume Soseki",
+        description_en: "A student befriends an older man who shares his story of guilt over a friend's suicide.",
         cover: "books/covers/cover_45.jpg",
         shelf: 4
     },
@@ -526,6 +661,9 @@ const booksData = [
         genre: "哲学",
         description: "20世纪最重要的哲学著作之一。海德格尔追问'存在的意义'，通过对'此在'（Dasein，人的存在）的分析，揭示了时间性是存在理解的地平。他提出了'向死而生'、'本真性'等概念，深刻影响了存在主义、解释学等现象学传统。",
         color: 6,
+        title_en: "Being and Time",
+        author_en: "Martin Heidegger",
+        description_en: "A foundational work of existential philosophy analyzing the concept of 'Being' through human existence.",
         cover: "books/covers/cover_46.jpg",
         shelf: 4
     },
@@ -537,6 +675,9 @@ const booksData = [
         genre: "哲学",
         description: "萨特的主要哲学著作，系统阐述了存在主义思想。'存在先于本质'：人没有预设的本质，必须通过自由选择来定义自己。但自由也带来焦虑和责任。萨特分析了'自为'（人的意识）和'自在'（物的存在）的区别，以及'为他'的存在（他人的注视），是理解存在主义的必读之作。",
         color: 1,
+        title_en: "Being and Nothingness",
+        author_en: "Jean-Paul Sartre",
+        description_en: "A foundational text of existentialist philosophy arguing that 'existence precedes essence'.",
         cover: "books/covers/cover_47.jpg",
         shelf: 4
     },
@@ -548,6 +689,9 @@ const booksData = [
         genre: "地缘政治",
         description: "麦金德在这篇论文中提出了'心脏地带理论'：谁控制了东欧，谁就控制了'心脏地带'；谁控制了心脏地带，谁就控制了'世界岛'（欧亚非大陆）；谁控制了世界岛，谁就控制了世界。这一理论奠定了地缘政治学的基础，至今仍影响着国际战略思考。",
         color: 2,
+        title_en: "The Geographical Pivot of History",
+        author_en: "Halford Mackinder",
+        description_en: "A seminal work of geopolitics proposing the 'Heartland Theory' of global control.",
         cover: "books/covers/cover_48.jpg",
         shelf: 4
     }

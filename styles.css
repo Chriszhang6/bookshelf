@@ -197,6 +197,59 @@ body::before {
     font-weight: 300;
 }
 
+/* ==================== 语言切换器 ==================== */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all var(--transition-fast);
+    animation: fadeInRight 0.6s ease-out;
+}
+
+.language-switcher:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 16px;
+    transition: all var(--transition-fast);
+    font-family: 'Noto Serif SC', 'Playfair Display', Georgia, serif;
+}
+
+.lang-btn:hover {
+    background: rgba(92, 74, 58, 0.1);
+    color: var(--wood-primary);
+}
+
+.lang-btn.active {
+    background: var(--wood-primary);
+    color: var(--bg-cream);
+}
+
+.lang-divider {
+    color: var(--wood-light);
+    font-weight: 300;
+}
+
 /* ==================== 主内容区 ==================== */
 .main-content {
     padding: 30px 20px 60px;
@@ -882,6 +935,17 @@ body::before {
     }
 }
 
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @keyframes gentleSway {
     0%, 100% {
         transform: rotate(-2deg);
@@ -1149,7 +1213,18 @@ body::before {
     .stat-number {
         font-size: 1.1rem;
     }
-    
+
+    .language-switcher {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+    }
+
+    .lang-btn {
+        padding: 4px 10px;
+        font-size: 0.85rem;
+    }
+
     .bookshelf-top {
         padding: 0 15px 10px;
     }
@@ -1212,7 +1287,18 @@ body::before {
     .site-title {
         font-size: 1.75rem;
     }
-    
+
+    .language-switcher {
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+    }
+
+    .lang-btn {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+
     .main-content {
         padding: 20px 10px 40px;
     }

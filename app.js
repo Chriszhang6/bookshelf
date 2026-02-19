@@ -3,11 +3,97 @@ const AppState = {
     selectedBook: null,
     isModalOpen: false,
     books: [],
-    favoriteBooks: new Set()
+    favoriteBooks: new Set(),
+    currentLanguage: 'zh' // 默认中文
 };
 
 // ==================== DOM 元素引用 ====================
 const DOM = {};
+
+// ==================== 翻译字典 ====================
+const Translations = {
+    zh: {
+        favorited: '已收藏',
+        favorite: '收藏',
+        share: '分享',
+        close: '关闭',
+        addedToFavorites: '已添加到收藏',
+        removedFromFavorites: '已取消收藏',
+        copiedToClipboard: '已复制到剪贴板，快去分享吧！',
+        shareSuccess: '分享成功！',
+        copyFailed: '复制失败，请手动复制',
+        description: '内容简介',
+        genre: '类型',
+        author: '作者'
+    },
+    en: {
+        favorited: 'Favorited',
+        favorite: 'Favorite',
+        share: 'Share',
+        close: 'Close',
+        addedToFavorites: 'Added to favorites',
+        removedFromFavorites: 'Removed from favorites',
+        copiedToClipboard: 'Copied to clipboard!',
+        shareSuccess: 'Shared successfully!',
+        copyFailed: 'Copy failed, please copy manually',
+        description: 'Description',
+        genre: 'Genre',
+        author: 'Author'
+    }
+};
+
+// ==================== 语言切换功能 ====================
+
+// 设置语言
+function setLanguage(lang) {
+    AppState.currentLanguage = lang;
+    localStorage.setItem('bookshelf_language', lang);
+
+    // 更新所有带有 data-zh 和 data-en 属性的元素
+    document.querySelectorAll('[data-zh]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+    });
+
+    // 更新书架上所有书脊的书名
+    document.querySelectorAll('.book').forEach(bookEl => {
+        const titleEn = bookEl.dataset.titleEn;
+        const titleZh = bookEl.dataset.title;
+        if (lang === 'en' && titleEn) {
+            bookEl.setAttribute('data-title', titleEn);
+        } else {
+            bookEl.setAttribute('data-title', titleZh);
+        }
+    });
+
+    // 更新语言切换按钮状态
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    // 如果有选中的书籍，更新书籍详情
+    if (AppState.selectedBook) {
+        updateBookInfo(AppState.selectedBook);
+        updateFavoriteButton();
+        updateShareButtonText();
+    }
+}
+
+// 初始化语言设置
+function initLanguage() {
+    // 从 localStorage 读取语言设置，默认为中文
+    const savedLang = localStorage.getItem('bookshelf_language') || 'zh';
+    setLanguage(savedLang);
+}
+
+// 绑定语言切换事件
+function bindLanguageEvents() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+}
 
 // 初始化 DOM 元素引用
 function initDOM() {
@@ -38,25 +124,30 @@ function init() {
     // 先初始化 DOM 元素引用
     initDOM();
 
+    // 初始化语言设置
+    initLanguage();
+    // 绑定语言切换事件
+    bindLanguageEvents();
+
     // 加载书籍数据
     if (typeof LocalBooksManager === 'undefined') {
         console.error('LocalBooksManager 未定义！检查 books/data.js 是否正确加载');
         return;
     }
     AppState.books = LocalBooksManager.getAllBooks();
-    
+
     // 加载收藏数据
     loadFavorites();
-    
+
     // 更新统计数据
     updateStats();
-    
+
     // 渲染书架
     renderBookshelf();
-    
+
     // 绑定事件
     bindEvents();
-    
+
     console.log(`📚 书架初始化完成，共加载 ${AppState.books.length} 本书`);
 }
 
@@ -141,20 +232,24 @@ function createBookElement(book, index) {
     bookEl.className = `book color-${book.color}`;
     bookEl.dataset.id = book.id;
     bookEl.dataset.title = book.title;
-    
+    bookEl.dataset.titleEn = book.title_en || book.title;
+
+    // 根据当前语言设置显示的书名
+    bookEl.setAttribute('data-title', AppState.currentLanguage === 'en' && book.title_en ? book.title_en : book.title);
+
     // 添加收藏标记
     if (AppState.favoriteBooks.has(book.id)) {
         bookEl.classList.add('favorited');
     }
-    
+
     // 添加装饰条
     const decoration = document.createElement('div');
     decoration.className = 'spine-decoration';
     bookEl.appendChild(decoration);
-    
+
     // 添加点击事件
     bookEl.addEventListener('click', () => openBook(book));
-    
+
     return bookEl;
 }
 
@@ -189,9 +284,16 @@ function openBook(book) {
 
 // ==================== 更新书籍信息 ====================
 function updateBookInfo(book) {
-    DOM.bookTitle.textContent = book.title;
-    DOM.bookAuthor.textContent = book.author;
-    DOM.bookDescription.textContent = book.description;
+    // 根据当前语言显示对应的书名、作者和描述
+    if (AppState.currentLanguage === 'en' && book.title_en) {
+        DOM.bookTitle.textContent = book.title_en;
+        DOM.bookAuthor.textContent = book.author_en;
+        DOM.bookDescription.textContent = book.description_en || book.description;
+    } else {
+        DOM.bookTitle.textContent = book.title;
+        DOM.bookAuthor.textContent = book.author;
+        DOM.bookDescription.textContent = book.description;
+    }
     DOM.bookYear.textContent = book.year;
     DOM.bookGenre.textContent = book.genre;
 
@@ -280,14 +382,14 @@ function updateFavoriteButton() {
     const isFavorited = AppState.favoriteBooks.has(AppState.selectedBook.id);
     const btnIcon = DOM.favoriteBtn.querySelector('.btn-icon');
     const btnText = DOM.favoriteBtn.querySelector('.btn-text');
-    
+
     if (isFavorited) {
         btnIcon.textContent = '♥';
-        btnText.textContent = '已收藏';
+        btnText.textContent = t('favorited');
         DOM.favoriteBtn.classList.add('active');
     } else {
         btnIcon.textContent = '♡';
-        btnText.textContent = '收藏';
+        btnText.textContent = t('favorite');
         DOM.favoriteBtn.classList.remove('active');
     }
 }
@@ -295,20 +397,20 @@ function updateFavoriteButton() {
 // ==================== 切换收藏状态 ====================
 function toggleFavorite() {
     if (!AppState.selectedBook) return;
-    
+
     const bookId = AppState.selectedBook.id;
     const bookElement = document.querySelector(`.book[data-id="${bookId}"]`);
-    
+
     if (AppState.favoriteBooks.has(bookId)) {
         AppState.favoriteBooks.delete(bookId);
         if (bookElement) bookElement.classList.remove('favorited');
-        showToast('已取消收藏');
+        showToast(t('removedFromFavorites'));
     } else {
         AppState.favoriteBooks.add(bookId);
         if (bookElement) bookElement.classList.add('favorited');
-        showToast('已添加到收藏');
+        showToast(t('addedToFavorites'));
     }
-    
+
     saveFavorites();
     updateFavoriteButton();
 }
@@ -337,18 +439,21 @@ function closeBook() {
 // ==================== 分享功能 ====================
 function shareBook() {
     if (!AppState.selectedBook) return;
-    
+
     const book = AppState.selectedBook;
-    const shareText = `📚 我在书柜中发现了一本好书：《${book.title}》\n\n作者：${book.author}\n类型：${book.genre}\n\n${book.description.substring(0, 100)}...\n\n快来看看我的书柜吧！`;
-    
+    const shareTextZh = `📚 我在书柜中发现了一本好书：《${book.title}》\n\n作者：${book.author}\n类型：${book.genre}\n\n${book.description.substring(0, 100)}...\n\n快来看看我的书柜吧！`;
+    const shareTextEn = `📚 Found a great book: "${book.title}"\n\nAuthor: ${book.author}\nGenre: ${book.genre}\n\n${book.description.substring(0, 100)}...\n\nCheck out my bookshelf!`;
+    const shareText = AppState.currentLanguage === 'en' ? shareTextEn : shareTextZh;
+    const shareTitle = AppState.currentLanguage === 'en' ? `Recommend: "${book.title}"` : `推荐一本书：《${book.title}》`;
+
     // 尝试使用 Web Share API
     if (navigator.share) {
         navigator.share({
-            title: `推荐一本书：《${book.title}》`,
+            title: shareTitle,
             text: shareText,
             url: window.location.href
         }).then(() => {
-            showToast('分享成功！');
+            showToast(t('shareSuccess'));
         }).catch((error) => {
             // 用户取消分享，不做处理
             if (error.name !== 'AbortError') {
@@ -366,7 +471,7 @@ function shareBook() {
 function copyToClipboard(text) {
     if (navigator.clipboard) {
         navigator.clipboard.writeText(text).then(() => {
-            showToast('已复制到剪贴板，快去分享吧！');
+            showToast(t('copiedToClipboard'));
         }).catch(() => {
             fallbackCopy(text);
         });
@@ -382,14 +487,14 @@ function fallbackCopy(text) {
     textarea.style.opacity = '0';
     document.body.appendChild(textarea);
     textarea.select();
-    
+
     try {
         document.execCommand('copy');
-        showToast('已复制到剪贴板，快去分享吧！');
+        showToast(t('copiedToClipboard'));
     } catch (err) {
-        showToast('复制失败，请手动复制');
+        showToast(t('copyFailed'));
     }
-    
+
     document.body.removeChild(textarea);
 }
 
@@ -398,10 +503,15 @@ function showToast(message) {
     const toastMessage = DOM.toast.querySelector('.toast-message');
     toastMessage.textContent = message;
     DOM.toast.classList.add('show');
-    
+
     setTimeout(() => {
         DOM.toast.classList.remove('show');
     }, 2500);
+}
+
+// 获取翻译文本
+function t(key) {
+    return Translations[AppState.currentLanguage][key] || Translations.zh[key] || '';
 }
 
 // ==================== 更新最近浏览 ====================

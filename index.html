@@ -25,25 +25,32 @@
     <div class="sparkle sparkle-4">✨</div>
     <div class="sparkle sparkle-5">✨</div>
 
+    <!-- 语言切换器 -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="zh">中文</button>
+        <span class="lang-divider">/</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
     <!-- 页面标题 -->
     <header class="page-header">
         <div class="header-content">
-            <h1 class="site-title">🏖️ 海滨书屋</h1>
-            <p class="site-subtitle">面朝大海，微风拂面 · 阅读的避风港</p>
+            <h1 class="site-title" data-zh="🏖️ 海滨书屋" data-en="🏖️ Seaside Library">🏖️ 海滨书屋</h1>
+            <p class="site-subtitle" data-zh="面朝大海，微风拂面 · 阅读的避风港" data-en="Facing the sea, gentle breeze · A reading sanctuary">面朝大海，微风拂面 · 阅读的避风港</p>
             <div class="header-stats">
                 <span class="stat-item">
                     <span class="stat-number" id="totalBooks">12</span>
-                    <span class="stat-label">本书</span>
+                    <span class="stat-label" data-zh="本书" data-en="Books">本书</span>
                 </span>
                 <span class="stat-divider">|</span>
                 <span class="stat-item">
                     <span class="stat-number" id="totalAuthors">7</span>
-                    <span class="stat-label">位作者</span>
+                    <span class="stat-label" data-zh="位作者" data-en="Authors">位作者</span>
                 </span>
                 <span class="stat-divider">|</span>
                 <span class="stat-item">
                     <span class="stat-number" id="totalGenres">10</span>
-                    <span class="stat-label">种类型</span>
+                    <span class="stat-label" data-zh="种类型" data-en="Genres">种类型</span>
                 </span>
             </div>
         </div>
@@ -56,7 +63,7 @@
                 <!-- 书架顶部的装饰 -->
                 <div class="bookshelf-top">
                     <div class="plant-left">🌸</div>
-                    <div class="bookshelf-title">📚 海滨书屋</div>
+                    <div class="bookshelf-title" data-zh="📚 海滨书屋" data-en="📚 Seaside Library">📚 海滨书屋</div>
                     <div class="plant-right">🌿</div>
                 </div>
                 
@@ -128,27 +135,27 @@
                             <span class="book-genre-badge" id="bookGenre">类型</span>
                             <span class="book-year" id="bookYear">年份</span>
                         </div>
-                        
+
                         <h2 class="book-title" id="bookTitle">书名</h2>
                         <p class="book-author" id="bookAuthor">作者</p>
-                        
+
                         <div class="book-divider"></div>
-                        
+
                         <div class="book-description-container">
-                            <h3>内容简介</h3>
+                            <h3 data-zh="内容简介" data-en="Description">内容简介</h3>
                             <p class="book-description" id="bookDescription">
                                 书籍描述内容...
                             </p>
                         </div>
-                        
+
                         <div class="book-actions">
                             <button class="action-btn favorite-btn" id="favoriteBtn">
                                 <span class="btn-icon">♥</span>
-                                <span class="btn-text">收藏</span>
+                                <span class="btn-text" data-zh="收藏" data-en="Favorite">收藏</span>
                             </button>
                             <button class="action-btn share-btn" id="shareBookBtn">
                                 <span class="btn-icon">↗</span>
-                                <span class="btn-text">分享</span>
+                                <span class="btn-text" data-zh="分享" data-en="Share">分享</span>
                             </button>
                         </div>
                     </div>
@@ -160,7 +167,7 @@
     <!-- 分享提示 -->
     <div class="toast" id="toast">
         <span class="toast-icon">✓</span>
-        <span class="toast-message">已复制到剪贴板</span>
+        <span class="toast-message" data-zh="已复制到剪贴板" data-en="Copied to clipboard">已复制到剪贴板</span>
     </div>
 
     <script src="books/data.js"></script>
