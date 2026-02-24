@@ -198,9 +198,27 @@ bookshelf/
 ├── app.js              # 交互逻辑和API
 ├── books/
 │   ├── data.js         # 书籍数据
-│   └── covers/        # 封面图片
+│   └── covers/         # 封面图片
+├── scripts/
+│   ├── books-list.json       # 用于拉取封面的书籍列表（id, 英文书名, 英文作者）
+│   └── fetch-english-covers.js  # 从 Open Library 拉取英文版封面的脚本
 └── README.md           # 说明文档
 ```
+
+### 更新封面为英文版 | Update Covers to English Editions
+
+若希望将书架上的封面统一替换为**英文版封面**，可使用 Open Library 的免费 API 自动拉取并覆盖 `books/covers/` 下的图片：
+
+在项目根目录执行：
+
+```bash
+node scripts/fetch-english-covers.js
+```
+
+- 脚本会按 `scripts/books-list.json` 中的英文书名与作者，向 Open Library 搜索并下载带封面的版本（优先英文），保存为 `books/covers/cover_01.jpg` … `cover_48.jpg`。
+- 请求间隔约 1.2 秒，避免对 API 造成压力。
+- 若有书籍未找到封面，会输出到控制台，并将失败列表写入 `scripts/fetch-failed.json`，可稍后重试或手动替换。
+- 数据来源：[Open Library](https://openlibrary.org)，使用时建议保留其致谢说明。
 
 ---
 

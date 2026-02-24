@@ -1,0 +1,32 @@
+[
+  {
+    "id": 40,
+    "title_en": "Kafka on the Shore",
+    "author_en": "Haruki Murakami",
+    "reason": "no_cover"
+  },
+  {
+    "id": 41,
+    "title_en": "Snow Country",
+    "author_en": "Yasunari Kawabata",
+    "reason": "no_cover"
+  },
+  {
+    "id": 44,
+    "title_en": "I Am a Cat",
+    "author_en": "Natsume Sōseki",
+    "reason": "no_cover"
+  },
+  {
+    "id": 46,
+    "title_en": "Being and Time",
+    "author_en": "Martin Heidegger",
+    "reason": "no_cover"
+  },
+  {
+    "id": 47,
+    "title_en": "Being and Nothingness",
+    "author_en": "Jean-Paul Sartre",
+    "reason": "no_cover"
+  }
+]
