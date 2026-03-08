@@ -1,171 +1,116 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的书柜 | 经典文学收藏</title>
+    <title>The Reading Room | A Curated Book Collection</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 吉卜力风格装饰元素 -->
-    <div class="cloud cloud-1">☁️</div>
-    <div class="cloud cloud-2">☁️</div>
-    <div class="cloud cloud-3">☁️</div>
-
-    <!-- 魔法粒子效果 -->
-    <div class="sparkle sparkle-1">✨</div>
-    <div class="sparkle sparkle-2">✨</div>
-    <div class="sparkle sparkle-3">✨</div>
-    <div class="sparkle sparkle-4">✨</div>
-    <div class="sparkle sparkle-5">✨</div>
-
-    <!-- 语言切换器 -->
-    <div class="language-switcher">
-        <button class="lang-btn active" data-lang="zh">中文</button>
-        <span class="lang-divider">/</span>
-        <button class="lang-btn" data-lang="en">EN</button>
-    </div>
-
-    <!-- 页面标题 -->
-    <header class="page-header">
-        <div class="header-content">
-            <h1 class="site-title" data-zh="🏖️ 海滨书屋" data-en="🏖️ Seaside Library">🏖️ 海滨书屋</h1>
-            <p class="site-subtitle" data-zh="面朝大海，微风拂面 · 阅读的避风港" data-en="Facing the sea, gentle breeze · A reading sanctuary">面朝大海，微风拂面 · 阅读的避风港</p>
-            <div class="header-stats">
-                <span class="stat-item">
-                    <span class="stat-number" id="totalBooks">12</span>
-                    <span class="stat-label" data-zh="本书" data-en="Books">本书</span>
-                </span>
-                <span class="stat-divider">|</span>
-                <span class="stat-item">
-                    <span class="stat-number" id="totalAuthors">7</span>
-                    <span class="stat-label" data-zh="位作者" data-en="Authors">位作者</span>
-                </span>
-                <span class="stat-divider">|</span>
-                <span class="stat-item">
-                    <span class="stat-number" id="totalGenres">10</span>
-                    <span class="stat-label" data-zh="种类型" data-en="Genres">种类型</span>
-                </span>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo">
+                <h1 class="site-title">The Reading Room</h1>
+                <p class="site-tagline">A Curated Collection of Timeless Literature</p>
             </div>
+            <nav class="header-nav">
+                <span class="stat"><span id="totalBooks">48</span> Books</span>
+                <span class="stat-divider">|</span>
+                <span class="stat"><span id="totalCategories">8</span> Categories</span>
+            </nav>
         </div>
     </header>
 
-    <!-- 主内容区 -->
+    <!-- Main Content -->
     <main class="main-content">
-        <div class="room">
-            <div class="bookshelf-wrapper">
-                <!-- 书架顶部的装饰 -->
-                <div class="bookshelf-top">
-                    <div class="plant-left">🌸</div>
-                    <div class="bookshelf-title" data-zh="📚 海滨书屋" data-en="📚 Seaside Library">📚 海滨书屋</div>
-                    <div class="plant-right">🌿</div>
+        <!-- Hero Section - Featured Book -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-book-cover" id="heroCover">
+                    <img src="" alt="Featured Book Cover" id="heroCoverImage">
                 </div>
-                
-                <div class="bookshelf">
-                    <!-- 书架层 1 -->
-                    <div class="shelf" data-shelf="1">
-                        <div class="shelf-shadow"></div>
-                        <div class="shelf-board"></div>
-                        <div class="books-container"></div>
-                    </div>
-                    <!-- 书架层 2 -->
-                    <div class="shelf" data-shelf="2">
-                        <div class="shelf-shadow"></div>
-                        <div class="shelf-board"></div>
-                        <div class="books-container"></div>
-                    </div>
-                    <!-- 书架层 3 -->
-                    <div class="shelf" data-shelf="3">
-                        <div class="shelf-shadow"></div>
-                        <div class="shelf-board"></div>
-                        <div class="books-container"></div>
-                    </div>
-                    <!-- 书架层 4 -->
-                    <div class="shelf" data-shelf="4">
-                        <div class="shelf-shadow"></div>
-                        <div class="shelf-board"></div>
-                        <div class="books-container"></div>
-                    </div>
-                </div>
-
-                <!-- 书架底部装饰 -->
-                <div class="bookshelf-bottom">
-                    <div class="decoration-items">
-                        <span class="decor-item" title="海螺">🐚</span>
-                        <span class="decor-item" title="贝壳">🪣</span>
-                        <span class="decor-item" title="沙堡">🏰</span>
-                        <span class="decor-item" title="海星">⭐</span>
-                        <span class="decor-item" title="帆船">⛵</span>
-                    </div>
+                <div class="hero-info">
+                    <span class="hero-label">Featured Read</span>
+                    <h2 class="hero-title" id="heroTitle">Loading...</h2>
+                    <p class="hero-author" id="heroAuthor">by Author</p>
+                    <p class="hero-description" id="heroDescription">Description loading...</p>
+                    <button class="hero-btn" id="heroBtn">View Details</button>
                 </div>
             </div>
+        </section>
+
+        <!-- Category Sections -->
+        <div id="categorySections">
+            <!-- Categories will be dynamically generated -->
         </div>
     </main>
 
-    <!-- 书籍详情模态框 -->
-    <div class="book-modal" id="bookModal">
+    <!-- Book Detail Modal -->
+    <div class="modal-overlay" id="bookModal">
         <div class="modal-backdrop" id="modalBackdrop"></div>
-        <div class="book-container">
-            <!-- 书籍信息卡片 -->
-            <div class="book-detail-card" id="bookDetailCard">
-                <button class="close-btn" id="closeBtn" aria-label="关闭">
-                    <svg viewBox="0 0 24 24" width="24" height="24">
-                        <path fill="none" stroke="currentColor" stroke-width="2" d="M6 6l12 12M6 18L18 6"/>
-                    </svg>
-                </button>
-                
-                <div class="book-detail-content">
-                    <!-- 左侧：封面图片 -->
-                    <div class="book-detail-cover">
-                        <div class="cover-image" id="bookCover">
-                            <span class="cover-icon" id="coverIcon">📖</span>
-                        </div>
-                        <div class="cover-shadow"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" stroke="currentColor" stroke-width="2" d="M6 6l12 12M6 18L18 6"/>
+                </svg>
+            </button>
+
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="" alt="Book Cover" id="modalCover">
+                </div>
+                <div class="modal-info">
+                    <div class="modal-meta">
+                        <span class="modal-genre" id="modalGenre">Genre</span>
+                        <span class="modal-year" id="modalYear">Year</span>
                     </div>
-                    
-                    <!-- 右侧：书籍信息 -->
-                    <div class="book-detail-info">
-                        <div class="book-header">
-                            <span class="book-genre-badge" id="bookGenre">类型</span>
-                            <span class="book-year" id="bookYear">年份</span>
-                        </div>
+                    <h2 class="modal-title" id="modalTitle">Book Title</h2>
+                    <p class="modal-author" id="modalAuthor">by Author</p>
 
-                        <h2 class="book-title" id="bookTitle">书名</h2>
-                        <p class="book-author" id="bookAuthor">作者</p>
+                    <div class="modal-divider"></div>
 
-                        <div class="book-divider"></div>
+                    <div class="modal-description">
+                        <h3>Description</h3>
+                        <p id="modalDescription">Book description...</p>
+                    </div>
 
-                        <div class="book-description-container">
-                            <h3 data-zh="内容简介" data-en="Description">内容简介</h3>
-                            <p class="book-description" id="bookDescription">
-                                书籍描述内容...
-                            </p>
-                        </div>
-
-                        <div class="book-actions">
-                            <button class="action-btn favorite-btn" id="favoriteBtn">
-                                <span class="btn-icon">♥</span>
-                                <span class="btn-text" data-zh="收藏" data-en="Favorite">收藏</span>
-                            </button>
-                            <button class="action-btn share-btn" id="shareBookBtn">
-                                <span class="btn-icon">↗</span>
-                                <span class="btn-text" data-zh="分享" data-en="Share">分享</span>
-                            </button>
-                        </div>
+                    <div class="modal-actions">
+                        <button class="action-btn favorite-btn" id="favoriteBtn">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path id="favoriteIcon" fill="none" stroke="currentColor" stroke-width="2" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                            <span id="favoriteText">Add to Favorites</span>
+                        </button>
+                        <button class="action-btn share-btn" id="shareBtn">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="none" stroke="currentColor" stroke-width="2" d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/>
+                            </svg>
+                            <span>Share</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 分享提示 -->
+    <!-- Toast Notification -->
     <div class="toast" id="toast">
-        <span class="toast-icon">✓</span>
-        <span class="toast-message" data-zh="已复制到剪贴板" data-en="Copied to clipboard">已复制到剪贴板</span>
+        <svg viewBox="0 0 24 24" width="20" height="20">
+            <path fill="none" stroke="currentColor" stroke-width="2" d="M20 6L9 17l-5-5"/>
+        </svg>
+        <span id="toastMessage">Action completed</span>
     </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>The Reading Room &mdash; A personal collection of literary classics</p>
+        </div>
+    </footer>
 
     <script src="books/data.js"></script>
     <script src="app.js"></script>
